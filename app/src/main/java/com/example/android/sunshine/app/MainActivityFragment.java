@@ -21,7 +21,7 @@ import java.util.ListIterator;
  */
 public class MainActivityFragment extends Fragment {
 
-    private ArrayAdapter<String> mForecastAdapter;
+    ArrayAdapter<String> mForecastAdapter;
 
     public MainActivityFragment() {
     }
@@ -40,7 +40,6 @@ public class MainActivityFragment extends Fragment {
                 "Sat - Sunny - 60/51",
                 "Sun - Sunny - 80/68"
         };
-
         List<String> weekForecast = new ArrayList<String>(Arrays.asList(forecastArray));
 
         mForecastAdapter = new ArrayAdapter<String>(
@@ -57,6 +56,6 @@ public class MainActivityFragment extends Fragment {
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
 
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return rootView;
     }
 }
